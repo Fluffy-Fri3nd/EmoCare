@@ -69,7 +69,11 @@ function EmotionDetection() {
     const predictEmotions = async () => {
         setLoading(true);
         try {
+<<<<<<< HEAD
             const response = await fetch('http://localhost:5000/predict', {
+=======
+            const response = await fetch('https://emocare-backend.vercel.app/predict', {
+>>>>>>> 139f107d4ee2936403a8716e049de2d23c15635a
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text }),
@@ -100,7 +104,11 @@ function EmotionDetection() {
     const getSuggestions = async (emotion) => {
         setLoadingSuggestions((prev) => ({ ...prev, [emotion]: true })); // Set loading true for current emotion
         try {
+<<<<<<< HEAD
             const response = await fetch(`http://localhost:5000/suggestions?emotion=${emotion}&text=${encodeURIComponent(text)}`);
+=======
+            const response = await fetch(`https://emocare-backend.vercel.app/suggestions?emotion=${emotion}&text=${encodeURIComponent(text)}`);
+>>>>>>> 139f107d4ee2936403a8716e049de2d23c15635a
             
             if (!response.ok) {
                 const errorText = await response.text();
