@@ -69,7 +69,7 @@ function EmotionDetection() {
     const predictEmotions = async () => {
         setLoading(true);
         try {
-            const response = await fetch('https://aldonast1907-emocare.hf.space/predict', {
+            const response = await fetch('https://aldonast-tes.hf.space/predict', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ text }),
@@ -100,7 +100,7 @@ function EmotionDetection() {
     const getSuggestions = async (emotion) => {
         setLoadingSuggestions((prev) => ({ ...prev, [emotion]: true })); // Set loading true for current emotion
         try {
-            const response = await fetch(`https://aldonast1907-emocare.hf.space/suggestions?emotion=${emotion}&text=${encodeURIComponent(text)}`);
+            const response = await fetch(`https://aldonast-tes.hf.space/suggestions?emotion=${emotion}&text=${encodeURIComponent(text)}`);
             
             if (!response.ok) {
                 const errorText = await response.text();
